@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - package:
+       name: "{{ item }}"
+       state: present
+     loop:
+      - "docker"
+      - "apache2"
+      - "maven"
+      - "openjdk-11-jdk"
